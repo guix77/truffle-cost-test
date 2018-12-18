@@ -1,5 +1,5 @@
 const truffleCost = require('truffle-cost');
-const TruffleCostTest = artifacts.require('TruffleCostTestTest');
+const TruffleCostTest = artifacts.require('TruffleCostTest');
 
 const smallString = 'Proinde concepta rabie saeviore, quam desperatio incendebat et fames';
 

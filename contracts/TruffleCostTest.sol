@@ -1,4 +1,4 @@
-pragma solidity >=0.4.21 <0.6.0;
+pragma solidity ^0.4.24;
 
 import './ownership/Ownable.sol';
 
@@ -8,11 +8,11 @@ contract TruffleCostTest is Ownable {
 
     event MyEvent(string _string);
 
-    function getString() external view returns (string memory) {
+    function getString() external view returns (string) {
         return myString;
     }
 
-    function setString(string calldata _string) external onlyOwner {
+    function setString(string _string) external onlyOwner {
         myString = _string;
         emit MyEvent(myString);
     }

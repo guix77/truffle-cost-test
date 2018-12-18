@@ -1,5 +1,5 @@
 const truffleCost = require('truffle-cost');
-const Ownable = artifacts.require('OwnableTest');
+const TruffleCostTest = artifacts.require('TruffleCostTestTest');
 
 const smallString = 'Proinde concepta rabie saeviore, quam desperatio incendebat et fames';
 
@@ -11,32 +11,32 @@ for (let i = 0; i < 10; i++) {
   hugeString = hugeString + mediumString;
 }
 
-contract('OwnableTest', async (accounts) => {
+contract('TruffleCostTestTest', async (accounts) => {
   const user1 = accounts[1];
   const user2 = accounts[2];
-  let ownable;
+  let truffleCostTest;
   let result;
 
-  it('User1 should deploy Ownable', async() => {
-    ownable = await Ownable.new({from: user1})
-    assert(ownable);
+  it('User1 should deploy TruffleCostTest', async() => {
+    truffleCostTest = await TruffleCostTest.new({from: user1})
+    assert(truffleCostTest);
   });
 
-  it('Ownable\'s owner should be User1', async() => {
-    result = await ownable.owner();
+  it('TruffleCostTest\'s owner should be User1', async() => {
+    result = await truffleCostTest.owner();
     assert.equal(result, user1);
   });
 
-  it('User1 should transfer Ownable to User2', async() => {
+  it('User1 should transfer TruffleCostTest to User2', async() => {
     result = await truffleCost.log(
-      ownable.transferOwnership(user2, {from: user1})
+      truffleCostTest.transferOwnership(user2, {from: user1})
     );
     assert(result);
   });
 
   it('User2 should set a small string in contract storage', async() => {
     result = await truffleCost.log(
-      ownable.setString(smallString, {from: user2}),
+      truffleCostTest.setString(smallString, {from: user2}),
       'USD'
     );
     assert(result);
@@ -44,7 +44,7 @@ contract('OwnableTest', async (accounts) => {
 
   it('User2 should set a medium string in contract storage', async() => {
     result = await truffleCost.log(
-      ownable.setString(mediumString, {from: user2}),
+      truffleCostTest.setString(mediumString, {from: user2}),
       'USD'
     );
     assert(result);
@@ -52,7 +52,7 @@ contract('OwnableTest', async (accounts) => {
 
   it('User2 should set a freaking long string in contract storage', async() => {
     result = await truffleCost.log(
-      ownable.setString(hugeString, {from: user2}),
+      truffleCostTest.setString(hugeString, {from: user2}),
       'USD'
     );
     assert(result);

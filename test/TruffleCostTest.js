@@ -11,7 +11,7 @@ for (let i = 0; i < 10; i++) {
   hugeString = hugeString + mediumString;
 }
 
-contract('TruffleCostTestTest', async (accounts) => {
+contract('TruffleCostTest', async (accounts) => {
   const user1 = accounts[1];
   const user2 = accounts[2];
   let truffleCostTest;

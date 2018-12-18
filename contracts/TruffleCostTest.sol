@@ -1,6 +1,6 @@
 pragma solidity >=0.4.21 <0.6.0;
 
-import '../ownership/Ownable.sol';
+import './ownership/Ownable.sol';
 
 contract TruffleCostTest is Ownable {
 

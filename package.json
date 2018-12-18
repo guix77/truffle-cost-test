@@ -1,0 +1,11 @@
+{
+  "name": "truffle-cost-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:guix77/truffle-cost-test.git",
+  "author": "Guillaume Duveau <guillaume.duveau@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "truffle-cost": "^1.0.1"
+  }
+}
